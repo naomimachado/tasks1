@@ -1,0 +1,36 @@
+<h2>Show Task</h2>
+
+<ul>
+
+  <li>
+    <strong>Task name:</strong>
+    <%= @task.task_name %>
+  </li>
+
+  <li>
+    <strong>Task description:</strong>
+    <%= @task.task_description %>
+  </li>
+
+  <li>
+    <strong>Time taken:</strong>
+    <%= @task.time_taken %>
+  </li>
+
+  <li>
+    <strong>Completed:</strong>
+    <%= @task.completed %>
+  </li>
+
+  <li>
+    <strong>Assigned to:</strong>
+    <%= @task.user.name %>
+    (<%= @task.user.email %>)
+  </li>
+
+</ul>
+
+<span><%= link "Edit Task", to: task_path(@conn, :edit, @task) %></span>
+<p>
+  <span><%= link "Back To Task List", to: task_path(@conn, :index) %></span>
+</p>

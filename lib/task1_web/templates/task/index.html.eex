@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col">
+    <h2>Listing Tasks</h2>
+  </div>
+  <div class="col ">
+    <h3 align="right"><%= link "Assign a New Task", to: task_path(@conn, :new) %></h3>
+  </div>
+</div>
+<br>
+
+<%= for task <- @tasks do %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> Task Title:<%= task.task_name %> </h5>
+          <p>Assigned To: <%= task.user.name %>(<%= task.user.email %>)</p>
+          <p>Description: <%= task.task_description %> </p>
+          <p>Time taken(in minutes): <%= task.time_taken %> </p>
+          <p> Completed: <%= task.completed %> </p>
+
+        <span><%= link "Show", to: task_path(@conn, :show, task), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: task_path(@conn, :edit, task), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+
+      </div>
+    </div>
+
+<% end %>

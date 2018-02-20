@@ -1,0 +1,13 @@
+/* This file is for your main application css. */
+
+@import "bootstrap";
+
+html, div, body {
+  font-style: normal;
+  background-color: aliceblue;
+}
+
+.error {
+  font-style: italic;
+  color: red;
+}

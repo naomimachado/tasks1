@@ -1,0 +1,25 @@
+<h2>Listing Users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User-ID</th>
+      <th>Name</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+    </tr>
+<% end %>
+
+  </tbody>
+</table>
+
+<span><%= link "Back To Creating a new Task", to: task_path(@conn, :new) %></span>
